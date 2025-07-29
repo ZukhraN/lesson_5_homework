@@ -66,6 +66,25 @@ public class homeWorkTests {
 
         Assertions.assertEquals("test", textareaText.getAttribute("value"));
 
+        //поле Disable input
+        WebElement disableInput = driver.findElement(By.xpath("//input[@name='my-disabled' and @disabled]"));
+
+        Assertions.assertEquals("Disabled input", disableInput.getAttribute("placeholder"));
+
+        //поле Readonly input
+        WebElement readonlyInput = driver.findElement(By.xpath("//input[@name='my-readonly' and @readonly]"));
+
+        Assertions.assertEquals("Readonly input", readonlyInput.getAttribute("value"));
+
+        //поле Dropdown (select)
+        WebElement dropDownSelect = driver.findElement(By.cssSelector(".form-select"));
+        dropDownSelect.click();
+        WebElement optionDropDown = driver.findElement(By.xpath("//option[@value='1']"));
+        optionDropDown.click();
+
+        Assertions.assertEquals("One", optionDropDown.getText());
+
+
 
     }
 }
