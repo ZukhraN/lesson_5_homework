@@ -84,7 +84,13 @@ public class homeWorkTests {
 
         Assertions.assertEquals("One", optionDropDown.getText());
 
+        //поле Dropdown (select)
+        WebElement dropDownDataList = driver.findElement(By.xpath("//input[@name='my-datalist']"));
+        dropDownDataList.click();
+        WebElement optionDataList = driver.findElement(By.xpath("//datalist/option[@value='New York']"));
+        //optionDataList.click();
 
+        //Assertions.assertEquals("New York", optionDataList.getAttribute("value"));
 
     }
 }
